@@ -41,6 +41,15 @@ module.exports = function(){
         await driver.sendKeys('java');
     });
 
+    it('click: 百度一下 ( #su, 73, 11, 0 )', async function(){
+        await driver.sleep(300).wait('#su', 30000)
+               .sleep(300).mouseMove(73, 11).click(0);
+    });
+
+    it('scrollTo: 0, 0', async function(){
+        await driver.scrollTo(0, 0);
+    });
+
     function _(str){
         if(typeof str === 'string'){
             return str.replace(/\{\{(.+?)\}\}/g, function(all, key){
